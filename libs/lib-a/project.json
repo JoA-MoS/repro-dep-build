@@ -1,0 +1,26 @@
+{
+  "name": "lib-a",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/lib-a/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/lib-a",
+        "main": "libs/lib-a/src/index.ts",
+        "tsConfig": "libs/lib-a/tsconfig.lib.json",
+        "assets": ["libs/lib-a/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/lib-a/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
